@@ -1,0 +1,7 @@
+<h1>This is the list of heroes</h1>
+
+<ul>
+  <% @heroes.each do |hero| %>
+    <li><%= link_to hero, hero_path(:hero => hero) %></li>
+  <% end %>
+</ul>

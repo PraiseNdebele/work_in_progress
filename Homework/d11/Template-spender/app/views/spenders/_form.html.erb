@@ -1,0 +1,22 @@
+<%= form_for @spender do |f| %>
+
+  <% if @spender.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@spender.errors.count, "error") %> prohibited this spender from being saved:
+      </h2>
+
+      <ul>
+        <% @spender.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%= f.label :name %>
+	<div><%= f.text_field :name , :size => 30 %></div> </br>
+	<%= f.submit %>	
+<% end %>
+
+

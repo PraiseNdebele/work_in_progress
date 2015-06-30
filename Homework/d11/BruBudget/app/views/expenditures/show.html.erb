@@ -1,0 +1,22 @@
+<h1>Expenditure:</h1>
+
+<p>
+  <strong>Item purchased:</strong>
+  <%= @expenditure.item %>
+</p>
+ 
+<p>
+  <strong>Price:</strong>
+  <%= @expenditure.price %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @expenditure.category %>
+</p>
+
+<p>
+  <%= link_to 'Destroy expenditure', [@expenditure.spender, @expenditure],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>

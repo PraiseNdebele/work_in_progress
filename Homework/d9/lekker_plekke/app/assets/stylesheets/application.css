@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ html {
+ 	display: block;
+ 	margin: 25px;
+ }
+
+.container{
+	padding: 50px;
+	margin-right: auto;
+	margin-left: auto;
+}
+div {
+	display: block;
+}
+body {
+	font-family:: "Helvetica Neue", Helvetica,Arial, sans-serif;
+	font-size: 15px;
+	line-height: 2;
+	color: #333;
+	padding: 50px;
+}
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+table{
+	display: table;
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-color: grey;
+}
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+tr{
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+td {
+	padding: 8px;
+	line-height: 2;
+	vertical-align: top;
+	border-top:1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+a {
+	color: blue;
+	text-decoration: none;
+	background: transparent;
+}

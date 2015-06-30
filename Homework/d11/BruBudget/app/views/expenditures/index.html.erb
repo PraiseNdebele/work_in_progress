@@ -1,0 +1,16 @@
+<h1>Expenditures</h1>
+
+<table class = "table">
+<tbody>
+	<% @expenditures.each do |expenditure| %>
+	<tr>
+		<td><%= expenditure.item %></td> 
+		<td><%= link_to 'Show', spender_expenditure_path(@spender, expenditure) %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+</br>
+
+<%= link_to 'New Expenditure', new_spender_expenditure_path(@spender) %> | <%= link_to 'Back', spender_path(@spender) %> | <%= link_to 'Home', root_path %>

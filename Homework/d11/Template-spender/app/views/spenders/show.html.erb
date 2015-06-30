@@ -1,0 +1,13 @@
+<h1><%= @spender.name %></h1>
+
+
+<%= link_to 'Edit', edit_spender_path(@spender) %> |
+
+<%= link_to 'Delete', spender_path(@spender),
+         method: :delete,
+         data: { confirm: 'Are you sure?' } %> |
+
+<%= link_to 'Back', spenders_path %>
+
+
+

@@ -1,0 +1,18 @@
+<div class="home">
+<h1>Courses | <%= link_to 'New course', new_course_path %></h1>
+
+</div>
+
+<table class = "table">
+<tbody>
+	<% @courses.each do |course| %>
+	<tr>
+		<td><%= link_to course.name, course_path(course) %> </td>
+		
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+</br>
+

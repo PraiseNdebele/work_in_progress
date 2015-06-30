@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @font-face {
+ 	font-family: coolvetica;
+ 	src: url('http://ufonts.com/fonts/coolvetica-regular.html');
+ }
+.home_header {
+	font-family: coolvetica;
+	font-size: 70pt;
+	color: black;
+	line-height: 0pt;
+}
+.homecourses {
+	font-family: coolvetica;
+
+}
+.home {
+	font-family: coolvetica;
+	text-align: left;
+	font-size: 50px;
+	line-height: 5pt;
+}
+ html {
+ 	display: block;
+ 	margin: 25px;
+ 	margin-top: 5px;
+ }
+
+.container{
+	padding: 50px;
+	margin-right: auto;
+	margin-left: auto;
+}
+div {
+	display: block;
+}
+body {
+	font-family: whitney;
+	font-size: 15px;
+	line-height: 2;
+	color: #333;
+	padding: 50px;
+}
+.table {
+	width: 90%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+table{
+	display: table;
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-color: grey;
+}
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+tr{
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+td {
+	padding: 8px;
+	line-height: 2;
+	vertical-align: top;
+	border-top:1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+a:link {
+	color: rgb(119,136,153);
+	text-decoration: none;
+}
+a:visited {
+	color: rgb(119,136,153);
+	text-decoration: none;
+}
+a:hover {
+	color: rgba(0, 0, 0, .2);
+}
+textarea {
+    width: 1000px;
+    height: 600px;
+}
+.note{
+	border-bottom: 1px solid #ddd;
+}
+.showlinks {
+	text-indent: 2pt;
+}
+.click {
+	float : right;
+}

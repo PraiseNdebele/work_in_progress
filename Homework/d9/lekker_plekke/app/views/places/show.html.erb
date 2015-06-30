@@ -1,0 +1,36 @@
+<h1>Place</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @place.name %>
+</p>
+ 
+<p>
+  <strong>About:</strong>
+  <%= @place.about %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @place.location %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @place.rating %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+
+<%= link_to 'Delete', place_path(@place),
+         method: :delete,
+         data: { confirm: 'Are you sure?' } %> |
+
+<%= link_to 'Back', places_path %>
+
+
+<h1>Comments</h1>
+<%= render @place.comments %>
+
+<p><strong>Add a comment</strong></p>
+<%= render 'comments/form' %>

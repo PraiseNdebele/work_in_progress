@@ -1,0 +1,22 @@
+<%= form_for([@spender, @spender.expenditures.build]) do |f| %>
+  <p>
+    <%= f.label :item_purchased %><br>
+    <%= f.text_field :item %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+

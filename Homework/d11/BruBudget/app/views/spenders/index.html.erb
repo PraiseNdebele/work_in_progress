@@ -1,0 +1,16 @@
+<h1>Spenders</h1>
+
+<table class = "table">
+<tbody>
+	<% @spenders.each do |spender| %>
+	<tr>
+		<td><%= spender.name %> </td>
+		<td class= "link"><%= link_to 'Show', spender_path(spender) %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+</br>
+
+<%= link_to 'New spender', new_spender_path %> | <%= link_to 'Home', root_path %>

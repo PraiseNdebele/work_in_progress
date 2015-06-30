@@ -1,0 +1,29 @@
+<p>
+  <strong>Name:</strong>
+  <%= note.creator %>
+</p>
+ 
+<p >
+  <strong>Note:</strong>
+  <%= note.body %>
+</p>
+
+<p class = "note" >
+  <%= link_to 'Delete', [note.course, note],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %> |
+   <%= ((note.created_at) + 2*60*60 ).to_formatted_s(:long) %> |
+   <span class ="click" ><input type="button" value="Like" id="countButton" /><span id="displayCount"> 0 </span> likes |
+   <input type="button" value="Dislike" id="countButton" /><span id="displayCount"> 0 </span> dislikes </span>
+</p>
+
+<script type="text/javascript">
+	var count = 0 ;
+	var button = document.getElementById("countButton");
+	var display = document.getElementById("displayCount");
+
+	button.onclick = function(){
+	count++;
+	display.innerHTML = count;
+	}
+ </script>

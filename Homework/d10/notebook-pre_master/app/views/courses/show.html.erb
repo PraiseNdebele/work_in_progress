@@ -1,0 +1,33 @@
+<h1><%= @course.name %></h1>
+ 
+<p>
+  <strong>Instructor:</strong>
+  <%= @course.instructor %>
+</p>
+
+<p>
+  <strong>Times:</strong>
+  <%= @course.time%>
+</p>
+
+<p>
+  <strong>Additional information:</strong>
+  <%= @course.additional %>
+</p>
+<div class='showlinks'>
+<%= link_to 'Edit', edit_course_path(@course) %> |
+
+<%= link_to 'Delete', course_path(@course),
+         method: :delete,
+         data: { confirm: 'Are you sure?' } %> |
+
+<%= link_to 'Back', courses_path %>
+</div>
+<h1>Notes</h1>
+<%= render @course.notes %>
+
+<p><strong>Add a note</strong></p>
+<%= render 'notes/form' %>
+
+
+

@@ -1,0 +1,35 @@
+<%= form_for @course do |f| %>
+
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:
+      </h2>
+
+      <ul>
+        <% @course.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%= f.label :name %>
+	<div><%= f.text_field :name , :placeholder => 'Single Variable Calculus',  :size => 30 %></div> </br>
+
+
+	<%= f.label :instructor %>
+	<div><%= f.text_field :instructor, :placeholder => 'John Smith', :size => 30  %></div> </br>
+
+	
+	<%= f.label :time %>
+	<div><%= f.text_field :time , :placeholder => 'Weekdays , 10:00 - 11:00' , :size => 30 %></div> </br>
+
+	
+	<%= f.label :additional_information %>
+	<div><%= f.text_area :additional %></div> </br>
+
+	<%= f.submit %>	
+<% end %>
+
+

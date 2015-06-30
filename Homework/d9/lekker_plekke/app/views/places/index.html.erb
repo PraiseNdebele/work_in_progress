@@ -1,0 +1,16 @@
+<h1>Lekker Plekke</h1>
+
+<table class = "table">
+<tbody>
+	<% @places.each do |place| %>
+	<tr>
+		<td><%= place.name %> </td>
+		<td class= "link"><%= link_to 'Show', place_path(place) %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+</br>
+
+<button><%= link_to 'New place', new_place_path %></button>

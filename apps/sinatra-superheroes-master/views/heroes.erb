@@ -1,0 +1,7 @@
+<h1>This is the list of heroes</h1>
+
+<ul>
+  <% @heroes.each do |hero| %>
+    <li><a href="/heroes/<%= hero %>"><%= hero %></a></li>
+  <% end %>
+</ul>

@@ -1,0 +1,13 @@
+<%= form_for([@course, @course.notes.build]) do |f| %>
+
+  <%= f.label :name  %>
+  <div><%= f.text_field :creator , :size => 30 %></div> </br>
+
+  <%= f.label :note %>
+  <div><%= f.text_area :body %></div> </br>
+
+  <%= f.submit %>
+
+
+
+<% end %>
