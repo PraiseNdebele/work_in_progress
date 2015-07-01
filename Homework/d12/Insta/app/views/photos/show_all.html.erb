@@ -1,6 +1,13 @@
-<h1> All public photos : </h1>
+<h1> All public photos of all users : </h1>
 
-<% @photos.each do |photo| %>
-	<%= photo.caption %>
-	<%= link_to 'show', user_photo_path(current_user,photo) %> 
-<% end %>
+
+<table>
+<tbody>
+	<% @photos.each do |photo| %>
+	<tr>
+		<td><%= link_to(image_tag(photo.image, :size => '100x175' ), user_photo_path(current_user,photo)) %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+

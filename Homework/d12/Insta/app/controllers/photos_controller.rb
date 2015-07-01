@@ -2,11 +2,10 @@ class PhotosController < ApplicationController
 	# before_action :authenticate_user!
 
 	def index
-		@user = User.find(params[:user_id])
-		current_user_id = params[:user_id].to_i
+		user = params[:user_id].to_i
 		
-		if @user.id == current_user_id
-			@photos = @user.photos
+		if current_user.id == user
+			@photos = current_user.photos
 		else
 			redirect_to root_path
 		end
@@ -14,22 +13,49 @@ class PhotosController < ApplicationController
 	
 
 	def show_all
-		@photos = Photo.where(public: true)
+		@photos = Photo.where(:public => true)
 	end
 	
 	def show
+		photo = params[:id].to_i
+		@photo = current_user.photos.find(photo)
 	end
 
 	def new
-		@user = User.find(params[:user_id])
-		@photo = @user.photos.new 
+		@current_user = current_user
+		@photo = @current_user.photos.new 
+	end
+
+	def edit
+		photo = params[:id].to_i
+		@photo = current_user.photos.find(photo)
 	end
 
 	def create
-		@user = User.find(params[:user_id])
-		@photo = @user.photos.create(photos_params)
+		@current_user = current_user
+		@photo = @current_user.photos.create(photos_params)
 		
 		render "show"
+	end
+
+	def update		
+		@current_user = current_user
+		photo = params[:id].to_i
+		@photo = @current_user.photos.find(photo)
+
+		if @photo.update(photos_params)
+			render "show"
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@current_user = current_user
+		photo = params[:id].to_i
+		@photo = @current_user.photos.find(photo)
+		@photo.destroy
+		redirect_to user_photos_path(@current_user)
 	end
 
 	private
@@ -37,4 +63,3 @@ class PhotosController < ApplicationController
 			params.require(:photo).permit(:image , :caption , :public )
 		end
 end
-

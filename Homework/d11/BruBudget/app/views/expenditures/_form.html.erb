@@ -1,4 +1,4 @@
-<%= form_for([@spender, @spender.expenditures.build]) do |f| %>
+<%= form_for([@spender, @expenditure]) do |f| %>  <!-- ... url  -->
 
   <% if @expenditure.errors.any? %>
     <div id="error_explanation">

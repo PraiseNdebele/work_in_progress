@@ -1,1 +1,16 @@
-<h1>New photo created</h1>
+<h1>Showing one specific photo </h1>
+
+<%= image_tag(@photo.image , :size => '100x175') %>
+<%= @photo.caption%>
+
+<%= link_to 'Edit', edit_user_photo_path(current_user, @photo) %> | 
+
+<%= link_to 'Delete', user_photo_path(current_user, @photo) ,
+         method: :delete,
+         data: { confirm: 'Are you sure?' } %> 
+
+<h2>Comments</h2>
+<%= render @photo.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>

@@ -12,11 +12,10 @@ class ExpendituresController < ApplicationController
 
 	def new
 		@spender = Spender.find(params[:spender_id])
-		@expenditure = @spender.expenditures.new
+		@expenditure = @spender.expenditures.new #plural beacause a spender has many expendnitures.
 	end
 
 	def edit
-		# @spender = Spender.find(params[:id])
 		@spender = Spender.find(params[:spender_id])
 		@expenditure = @spender.expenditures.find(params[:id])
 	end
@@ -34,7 +33,7 @@ class ExpendituresController < ApplicationController
 		@expenditure = @spender.expenditures.find(params[:id])
 
 		if @expenditure.update(expenditure_params)
-			redirect_to @expenditure
+			render "show"
 		else
 			render 'edit'
 		end
