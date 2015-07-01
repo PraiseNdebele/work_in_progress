@@ -1,0 +1,8 @@
+<h1> All your photos : </h1>
+
+<% @photos.each do |photo| %>
+	<%= photo.caption %>
+	<%= link_to 'show', user_photo_path(current_user,photo) %> 
+<% end %>
+
+<%= link_to 'New Photo', new_user_photo_path(@user) %> 
