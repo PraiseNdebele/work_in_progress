@@ -17,30 +17,34 @@ class ExpendituresController < ApplicationController
 
 	def edit
 		# @spender = Spender.find(params[:id])
+		@spender = Spender.find(params[:spender_id])
+		@expenditure = @spender.expenditures.find(params[:id])
 	end
 
 	def create
 		@spender = Spender.find(params[:spender_id])
 		@expenditure = @spender.expenditures.create(expenditure_params)
-		redirect_to spender_path(@spender)
+		# redirect_to spender_path(@spender)
+		render "show"
 	end
 
 
 	def update
-		# @spender = Spender.find(params[:id])
+		@spender = Spender.find(params[:spender_id])
+		@expenditure = @spender.expenditures.find(params[:id])
 
-		# if @spender.update(spender_params)
-		# 	redirect_to @spender
-		# else
-		# 	render 'edit'
-		# end
+		if @expenditure.update(expenditure_params)
+			redirect_to @expenditure
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
 		@spender = Spender.find(params[:spender_id])
 		@expenditure = @spender.expenditures.find(params[:id])
 		@expenditure.destroy
-		redirect_to spender_path(@spender)
+		redirect_to spender_expenditures_path(@spender)
 	end
 
 	private

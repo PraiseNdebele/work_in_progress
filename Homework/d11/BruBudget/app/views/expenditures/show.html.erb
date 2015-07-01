@@ -1,7 +1,7 @@
 <h1>Expenditure:</h1>
 
 <p>
-  <strong>Item purchased:</strong>
+  <strong>Purchase:</strong>
   <%= @expenditure.item %>
 </p>
  
@@ -15,8 +15,8 @@
   <%= @expenditure.category %>
 </p>
 
-<p>
-  <%= link_to 'Destroy expenditure', [@expenditure.spender, @expenditure],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+<%= link_to 'Edit', edit_spender_expenditure_path(@spender, @expenditure) %> |
+
+<%= link_to 'Delete expenditure', [@expenditure.spender, @expenditure],method: :delete, data: { confirm: 'Are you sure?' } %> |
+
+<%= link_to 'Back', spender_expenditures_path(@spender) %> 

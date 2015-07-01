@@ -1,16 +1,41 @@
 <%= form_for([@spender, @spender.expenditures.build]) do |f| %>
+
+  <% if @expenditure.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@expenditure.errors.count, "error") %> prohibited this expenditure from being saved:
+      </h2>
+
+      <ul>
+        <% @expenditure.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
-    <%= f.label :item_purchased %><br>
-    <%= f.text_field :item %>
+    <%= f.label :purchase %><br>
+    <%= f.text_field :item , :size => 30 %>
   </p>
   <p>
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <%= f.text_field :price , :size => 30 %>
   </p>
 
   <p>
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.text_field :category , :size => 30 %>
+
+   <!--    <select>
+          <option value="" disabled="disabled" selected="selected"></option>
+          <option value="1">Food</option>
+          <option value="2">Transport</option>
+          <option value="3">Excursion</option>
+          <option value="4">Laundry</option>
+          <option value="4">Sundries</option>
+      </select> -->
+      
   </p>
   
   <p>

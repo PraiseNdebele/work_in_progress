@@ -8,6 +8,20 @@ class SpendersController < ApplicationController
 
 	def show
 		@spender = Spender.find(params[:id])
+		@count = @spender.expenditures.count
+
+		if @count == 0 
+			@total = @average = 0
+		else 
+			expenditures = @spender.expenditures
+			prices = []
+			expenditures.each do |expenditure|
+				prices << expenditure.price
+			end
+
+			@total = prices.inject(:+)
+			@average =  @total / @count
+		end
 	end
 
 	def new

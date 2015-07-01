@@ -1,6 +1,5 @@
 <h1>New expenditure</h1>
 
-
 <%= form_for [@spender, @expenditure] do |f| %>
 
   <% if @expenditure.errors.any? %>
@@ -18,7 +17,7 @@
   <% end %>
 
   <p>
-    <%= f.label :item_purchased %><br>
+    <%= f.label :purchase%><br>
     <%= f.text_field :item , :size => 30 %>
   </p>
   <p>
@@ -29,12 +28,24 @@
   <p>
     <%= f.label :category %><br>
     <%= f.text_field :category , :size => 30 %>
+
+<!--       <select>
+          <option value="" disabled="disabled" selected="selected"></option>
+          <option value="1">Food</option>
+          <option value="2">Transport</option>
+          <option value="3">Excursion</option>
+          <option value="4">Laundry</option>
+          <option value="4">Sundries</option>
+      </select> -->
+      
   </p>
   
   <p>
     <%= f.submit %>
   </p>
+  
 <% end %>
+
 
 
 <%= link_to "Back", spender_expenditures_path(params[:spender_id]) %>

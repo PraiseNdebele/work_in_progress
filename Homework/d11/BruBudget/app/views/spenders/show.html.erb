@@ -1,5 +1,26 @@
 <h1><%= @spender.name %></h1>
 
+<h3>Summary </h3>
+
+
+<table class = "table">
+<tbody>
+	<tr>
+		<td>Number of transactions</td>
+		<td><%= @count %></td>
+	</tr>
+	<tr>
+		<td>Total amount spent</td>
+		<td>R<%= @total %></td>
+	</tr>
+	<tr>
+		<td>Average amount spent per transaction</td>	
+		<td>R<%= @average %></td>		
+	</tr>
+</tbody>
+</table>
+
+<br>
 
 <%= link_to 'Edit', edit_spender_path(@spender) %> |
 
@@ -11,7 +32,5 @@
 
 <br>
 
+
 <%= link_to 'Expenditures',spender_expenditures_path(@spender) %>
-
-
-
