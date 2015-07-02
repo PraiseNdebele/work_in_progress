@@ -1,4 +1,4 @@
-<%= form_for([@current_user, @photo]) do |f| %>
+<%= form_for([@current_user, @photo])do |f| %>
 
   <% if @current_user.errors.any? %>
     <div id="error_explanation">
@@ -15,13 +15,13 @@
   <% end %>
 
   <%= f.label :image %>
-  <div><%= f.text_field :image , :size => 30 %></div> </br>
+  <div><%= f.file_field :image %></div> </br> 
 
   <%= f.label :caption %>
   <div><%= f.text_field :caption , :size => 30 %></div> </br>
 
   <%= f.label :public %>
-  <div><%= f.check_box :public , :size => 30 %></div> </br>
+  <div><%= f.check_box :public %></div> </br>
 
   <%= f.button(:submit, class: 'btn btn-primary') %> 
 <% end %> 

@@ -1,7 +1,6 @@
 <h1>Showing one specific photo </h1>
 
-
-<%= image_tag(@photo.image , :size => '100x175') %>
+<%= image_tag(@photo.image, :width => 300) if @photo.present? %>
 <%= @photo.caption%>
 
 <% if @power %>
@@ -19,4 +18,6 @@
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
+
+
 
