@@ -21,7 +21,7 @@
   <div><%= f.text_field :caption , :size => 30 %></div> </br>
 
   <%= f.label :public %>
-  <div><%= f.text_field :public , :size => 30 %></div> </br>
+  <div><%= f.check_box :public , :size => 30 %></div> </br>
 
-  <%= f.submit %> 
-<% end %>
+  <%= f.button(:submit, class: 'btn btn-primary') %> 
+<% end %> 

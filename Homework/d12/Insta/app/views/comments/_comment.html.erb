@@ -8,8 +8,11 @@
   <%= comment.body %>
 </p>
 
-<p>
-  <%= link_to 'Destroy Comment', [comment.photo, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+
+<% if @power %>
+	<p>
+		<%= link_to 'Destroy Comment', [comment.photo, comment],
+	           method: :delete,
+	           data: { confirm: 'Are you sure?' } %>
+	</p>
+<% end %>

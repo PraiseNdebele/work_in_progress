@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class = 'container'>
 	<% if notice %>
 	  <p class="alert alert-success"><%= notice %></p>
 	<% end %>
@@ -25,9 +26,13 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 
-| <%= link_to 'Home' , root_path %>
+| <%= link_to 'Home' , root_path %> |
+
+<%= link_to 'Back', :back %>
 
 <%= yield %>
+
+</div>
 
 </body>
 </html>

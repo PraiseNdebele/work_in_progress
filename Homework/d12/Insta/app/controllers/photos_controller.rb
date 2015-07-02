@@ -17,8 +17,28 @@ class PhotosController < ApplicationController
 	end
 	
 	def show
-		photo = params[:id].to_i
-		@photo = current_user.photos.find(photo)
+		photo = params[:id].to_i	
+
+		# @current_photo = Photo.find(photo)
+		# if @current_photo.user_id == current_user.id
+		# 	@photo = current_user.photos.find(photo)
+		# 	if @current_photo.public				
+		# 		@changes = true
+		# 	else
+		# 		@changes = false
+		# 	end
+		
+		# else			
+		# 	@photo =  Photo.find(photo)		
+		# end
+
+		@photo = Photo.find(photo)
+	
+
+		if @photo.user_id == current_user.id
+			@power = true
+		end
+
 	end
 
 	def new

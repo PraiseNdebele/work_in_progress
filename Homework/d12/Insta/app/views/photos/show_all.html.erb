@@ -1,6 +1,8 @@
+
+<h1>Welcome to BruGram</h1>
+
+<% if user_signed_in? %>
 <h1> All public photos of all users : </h1>
-
-
 <table>
 <tbody>
 	<% @photos.each do |photo| %>
@@ -11,3 +13,7 @@
 </tbody>
 </table>
 
+
+<%= link_to 'my photos' , user_photos_path(current_user) %> 
+
+<% end %>

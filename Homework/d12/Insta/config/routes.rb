@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :photos
   end
 
-  get '/photos', to: 'photos#show'
+  get '/photos', to: 'photos#show_all'
   root 'photos#show_all'
 
    resources :photos , only: [] do
