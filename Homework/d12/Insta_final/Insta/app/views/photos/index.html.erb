@@ -1,0 +1,28 @@
+<%= render 'nav' %>
+<div class="container">
+     <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">
+                    <strong>My photos</strong>
+                </h2>
+                <hr>
+                
+            </div>
+			<% @photos.each do |photo| %>
+            <div class="col-md-6" >
+             	<h3><small><strong><%= photo.caption %></strong></small></h3>
+                <td><%= link_to(image_tag(photo.image, :class => "img-responsive", :alt => ""), user_photo_path(current_user,photo)) %></td>    
+            </div>
+            <% end %>
+        </div>
+            <hr>
+                <h2 class="intro-text text-center">
+                    <small><%= link_to 'New Photo', new_user_photo_path(current_user), :class => "btn btn-default btn-lg" %></small>
+                </h2>
+            <hr> 
+    </div>
+</div>
+<!-- /.container -->
+<%= render 'footer' %>
